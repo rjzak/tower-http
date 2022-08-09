@@ -14,10 +14,10 @@ pub mod redirect;
 pub use self::redirect::Redirect;
 
 #[cfg(feature = "fs")]
-#[cfg(not(target_arch = "wasm32"))]
+#[cfg(not(target_os = "wasi"))]
 pub mod fs;
 
 #[cfg(feature = "fs")]
-#[cfg(not(target_arch = "wasm32"))]
+#[cfg(not(target_os = "wasi"))]
 #[doc(inline)]
 pub use self::fs::{ServeDir, ServeFile};
